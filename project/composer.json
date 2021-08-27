@@ -14,7 +14,8 @@
 		"psr-4": {
 			"App\\": "app/",
 			"Core\\": "core/",
-			"Components\\": "components/"
+			"Component\\": "component/",
+			"Common\\": "common/"
 		}
 	},
 	"require": {

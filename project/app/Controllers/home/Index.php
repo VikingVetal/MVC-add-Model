@@ -11,17 +11,17 @@ class Index extends AbstractController
 //        echo "Мы в контроллере INDEX";
 //    }
 
-    public function index()
-    {
-        View::view('Index', 'home');
-    }
+//    public function index()
+//    {
+//        View::view('Index', 'home');
+//    }
 
-    public function list()
+    public function Index()
     {
-        $modelObjText = new \App\model\Index();
-        $getText = $modelObjText->list('book');
-        var_dump($getText);
-        $this->gener('model', $getText);
+        $modelObgIndex = new \App\Model\Index();
+        $byTitle = $modelObgIndex->getAll();
+        //var_dump($byTitle);
+        $this->gener('Index','home', $byTitle );
     }
 }
 ?>

@@ -10,7 +10,8 @@ class ComposerStaticInit2cba51858992ec40f36be577fa4ccba1
         'C' => 
         array (
             'Core\\' => 5,
-            'Components\\' => 11,
+            'Component\\' => 10,
+            'Common\\' => 7,
         ),
         'A' => 
         array (
@@ -23,9 +24,13 @@ class ComposerStaticInit2cba51858992ec40f36be577fa4ccba1
         array (
             0 => __DIR__ . '/../..' . '/core',
         ),
-        'Components\\' => 
+        'Component\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/components',
+            0 => __DIR__ . '/../..' . '/component',
+        ),
+        'Common\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/common',
         ),
         'App\\' => 
         array (
@@ -34,8 +39,18 @@ class ComposerStaticInit2cba51858992ec40f36be577fa4ccba1
     );
 
     public static $classMap = array (
-        'App\\Apple' => __DIR__ . '/../..' . '/app/Apple.php',
+        'App\\Controllers\\AbstractController' => __DIR__ . '/../..' . '/app/Controllers/AbstractController.php',
+        'App\\Controllers\\ErrorPage404' => __DIR__ . '/../..' . '/app/Controllers/ErrorPage404.php',
+        'App\\Controllers\\admin\\Admin' => __DIR__ . '/../..' . '/app/Controllers/admin/Admin.php',
+        'App\\model\\About' => __DIR__ . '/../..' . '/app/model/About.php',
+        'App\\model\\AbstractModel' => __DIR__ . '/../..' . '/app/model/AbstractModel.php',
+        'App\\model\\Admin' => __DIR__ . '/../..' . '/app/model/Admin.php',
+        'App\\model\\Gallery' => __DIR__ . '/../..' . '/app/model/Gallery.php',
+        'App\\model\\Index' => __DIR__ . '/../..' . '/app/model/Index.php',
+        'Common\\Database\\Connector' => __DIR__ . '/../..' . '/common/Database/Connector.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'Core\\View' => __DIR__ . '/../..' . '/core/View.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

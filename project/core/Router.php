@@ -54,7 +54,7 @@ final class Router
             $classObj->index();
         }
 
-        $classObj->index();
+        //$classObj->index();
     }
 
 }
