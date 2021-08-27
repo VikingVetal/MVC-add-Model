@@ -9,6 +9,15 @@
 </head>
 <body>
 <div>
+    <?php
+    if(gettype($data)  == 'array') : ?>
+        <?php foreach ($data as $key=>$value) : ?>
+            <br>
+            <?=$key .' ' ?>
+            <?=print_r($value) ?>
+        <?php endforeach;?>
+    <?php endif; ?>
+
     <p>Hallo World</p>
     <p>It's page <b>'Gallery'</b></p>
 </div>

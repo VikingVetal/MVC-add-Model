@@ -5,8 +5,8 @@ use Core\View;
 
 abstract class AbstractController
 {
-    protected function gener($name, $data = NULL)
+    protected function gener($name, $dir, $data = NULL)
     {
-        View::view($name, $data);
+        View::view($name, $dir, $data);
     }
 }

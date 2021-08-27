@@ -2,6 +2,8 @@
 
 namespace App\model;
 
+use Common\Database\Connector;
+
 class Admin extends AbstractModel
 {
     public $register =
@@ -11,6 +13,15 @@ class Admin extends AbstractModel
             'phone'=> '1234567'
 
         ];
+
+
+    public function getAll()
+    {
+        $sql = 'SELECT * FROM admin;';
+        $result =  $this->dbConnect->query($sql);
+        return $result->fetchAll();
+    }
+
 
     public function getPassword($register)
     {

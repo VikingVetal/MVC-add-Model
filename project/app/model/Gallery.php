@@ -2,6 +2,8 @@
 
 namespace App\model;
 
+use Common\Database\Connector;
+
 class Gallery extends AbstractModel
 {
     public $content =
@@ -11,6 +13,13 @@ class Gallery extends AbstractModel
             'photo'=> 'photo'
 
         ];
+
+    public function getAll()
+    {
+        $sql = 'SELECT * FROM gallery;';
+        $result =  $this->dbConnect->query($sql);
+        return $result->fetchAll();
+    }
 
     public function getContent($content)
     {
