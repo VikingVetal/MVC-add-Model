@@ -6,10 +6,11 @@ use Common\Database\Connector;
 
 class DataBase
 {
-    $selectAll = '*';
 
     public function __construct()
     {
+         $selectAll = '*';
+
          $sql = 'SELECT ' . $selectAll . ' FROM ' . db_name; 
     }
 
