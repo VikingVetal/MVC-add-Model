@@ -6,7 +6,6 @@ use Common\Database\Connector;
 
 class DataBase
 {
-    protected $db;
     $selectAll = '*';
 
     public function __construct()
