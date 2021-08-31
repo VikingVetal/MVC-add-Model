@@ -13,7 +13,7 @@ class Connector
         $config = require $dirPath. '/../../Config/Database.php';
         //var_dump($config);
         $this->dns =
-            $config['driver'] . ':' .'dbname='.
+            $config['driver'] .  ':' .'dbname='.
             $config['dbname'] . ';host'.
             $config['host'] . ':'.
             $config['port'];
@@ -24,7 +24,6 @@ class Connector
         $this->password =
             $config['password'];
 
-
     }
 
     public function connect()
@@ -32,4 +31,5 @@ class Connector
        $pdoObj = new \PDO($this->dns, $this->user, $this->password);
        return $pdoObj;
     }
+
 }

@@ -15,9 +15,12 @@ class Gallery extends AbstractController
     public function index()
     {
         $modelObgGallery = new \App\Model\Gallery();
-        $byTitle = $modelObgGallery ->getAll();
+        $byTitle = $modelObgGallery ->getConc(1);
         //var_dump($byTitle);
         $this->gener('Gallery','home', $byTitle );
+
+
+
         //View::view('Gallery', 'home', $byTitle);
     }
 

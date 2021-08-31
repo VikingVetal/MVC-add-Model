@@ -9,9 +9,9 @@ class Index extends AbstractModel
 
     public function getAll()
     {
-        $sql = 'SELECT * FROM index;';
+        $sql = 'SELECT * FROM home;';
         $result = $this->dbConnect->query($sql);
-        return $result->fetchAll();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public $text = 'Index model';
