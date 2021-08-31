@@ -7,11 +7,11 @@ use Common\Database\Connector;
 class DataBase
 {
     protected $db;
-
+    $selectAll = '*';
 
     public function __construct()
     {
-
+         $sql = 'SELECT ' . $selectAll . ' FROM ' . db_name; 
     }
 
 //    public function query($sql, $params = []) {
