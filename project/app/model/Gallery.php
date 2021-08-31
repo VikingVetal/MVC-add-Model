@@ -18,7 +18,16 @@ class Gallery extends AbstractModel
     {
         $sql = 'SELECT * FROM gallery;';
         $result =  $this->dbConnect->query($sql);
-        return $result->fetchAll();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+
+    }
+
+    public function getConc($line_id)
+    {
+        $sql ='SELECT gallery.id as gallery_id, about.id as about_id, gallery.text as gallery_text, about.title as about_title FROM gallery
+        INNER JOIN about ON gallery.id = about.id WHERE about.id = '. (int)$line_id .'  order by about.id DESC ;';
+        $result =  $this->dbConnect->query($sql);
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function getContent($content)

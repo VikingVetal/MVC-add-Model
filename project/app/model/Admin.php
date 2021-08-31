@@ -17,9 +17,9 @@ class Admin extends AbstractModel
 
     public function getAll()
     {
-        $sql = 'SELECT * FROM admin;';
+        $sql = 'SELECT * FROM prouser';
         $result =  $this->dbConnect->query($sql);
-        return $result->fetchAll();
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 

@@ -27,7 +27,7 @@ class About extends AbstractController
     public function about()
     {
         $modelObgAboutByTitle = new \App\model\About;
-        $byTitle = $modelObgAboutByTitle ->getAll();
+        $byTitle = $modelObgAboutByTitle->getConc(1);
         //var_dump($byTitle);
         $this->gener('About','home', $byTitle );
     }

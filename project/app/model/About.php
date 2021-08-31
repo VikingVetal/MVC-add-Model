@@ -19,13 +19,15 @@ class About extends AbstractModel
     {
         $sql = 'SELECT * FROM about;';
         $result = $this->dbConnect->query($sql);
-        If ($result){
-            while ($row = $result->fetchAll()){
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
-            }
-        }
-
-        //return $result->fetchAll();
+    public function getConc($line_id)
+    {
+        $sql ='SELECT about.id as about_id, home.id as home_id, about.title as about_title, home.info as about_title FROM about
+        INNER JOIN home ON about.id = home.id WHERE home.id = '. (int)$line_id .'  order by home.id DESC ;';
+        $result =  $this->dbConnect->query($sql);
+        return $result->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
