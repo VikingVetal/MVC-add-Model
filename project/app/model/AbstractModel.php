@@ -3,7 +3,7 @@
 namespace App\model;
 
 use Common\Database\Connector;
-use Common\Database\DataBase;
+use Common\Database\Select;
 
 class AbstractModel
 {
