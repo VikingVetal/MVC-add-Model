@@ -2,7 +2,8 @@
 
 namespace App\model;
 
-use Common\Database\Connector;
+
+use Common\Database\Select;
 
 class Gallery extends AbstractModel
 {
@@ -16,9 +17,21 @@ class Gallery extends AbstractModel
 
     public function getAll()
     {
-        $sql = 'SELECT * FROM gallery;';
-        $result =  $this->dbConnect->query($sql);
-        return $result->fetchAll(\PDO::FETCH_ASSOC);
+
+        $selectMethood = new Select($this->getSGL);
+        $selection = $selectMethood;
+        return $selection;
+
+        // пробовал через абстрактный класс
+//        $sql = 'SELECT * FROM gallery;';
+//        $result =  $this->getSGL->getALL($sql);
+//        return $result->fetchAll(\PDO::FETCH_ASSOC);
+
+
+/////////// рабочий
+//        $sql = 'SELECT * FROM gallery;';
+//        $result =  $this->dbConnect->query($sql);
+//        return $result->fetchAll(\PDO::FETCH_ASSOC);
 
     }
 
